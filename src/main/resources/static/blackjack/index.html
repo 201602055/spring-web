@@ -402,6 +402,15 @@
             color: green;
             font-size: 21px;
         }
+        #fund{
+            position: absolute;
+            right:180px;
+            top:5px;
+        }
+        #info{
+            position: absolute;
+            float:left;
+        }
     </style>
 </head>
 <body>
@@ -418,6 +427,15 @@
     </div>
 </div>
 <div class="page" id="game" style="display: none">
+    <div id="info">
+        <b>User Name</b><br>
+        <span id="name"></span>
+    </div>
+    <div id="fund">
+        <b>Available Funds</b><br>
+        <span id="money" class="money"></span>
+        <div class="clear"></div>
+    </div>
     <div class="dealer-cards"></div>
     <div class="clear"></div>
     <div class="player-cards"></div>
@@ -486,6 +504,7 @@
             $('#game').show();
             gameRoomId = data.roomId;
             drawGameRoom(data);
+            $('#name').text($('#input_login_name').val());
         });
     })
 
