@@ -67,6 +67,8 @@ public void hit(String name) {
     player.hitCard();
     if(player.getHand().getCardSum() >= 21) {
         evaluator.evaluate();
+        if(player.getHand().getCardSum() == 21)
+            player.blackjack();
         this.isFinished = true;
     }
 }
