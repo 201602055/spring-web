@@ -31,7 +31,11 @@ public class Player {
 
     public void placeBet(long bet) {
         if(balance < bet) {
-            throw new NotEnoughBalanceException();
+            /**
+             * Modified by Subeen 2018.6.16..
+             * 9. 만약 내가 가진 돈이 기본 배팅금액 이하일 경우, all-in 되도록 해주세요.
+             * */
+            bet = balance;
         }
         balance -= bet;
         currentBet = bet;
