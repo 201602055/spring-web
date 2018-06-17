@@ -22,14 +22,18 @@ public class Hand {
         cardList.add(card);
         return card;
     }
-
+    /**Jack, Queen, King, Ace 의 계산*/
     public int getCardSum() {
         int sum = 0;
         for(int i=0; i<cardList.size();i++){
             if(cardList.get(i).getRank()>10){
                 sum=sum+10;
-            }
-            else{
+            }else if(cardList.get(i).getRank()==1){
+                if (sum > 10) {
+                    sum +=1;
+                } else {
+                    sum += 11;
+                } else {
                 sum=sum+cardList.get(i).getRank();
             }
         }
