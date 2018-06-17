@@ -57,7 +57,15 @@ public class Player {
     public void lost() {
         currentBet = 0;
     }
-
+    
+    /**
+     * 4. Blackjack 이면 1.5배를 돌려받아야 할 것 같아요.
+     * */
+    public void blackjack() {
+        balance += currentBet * 1.5;
+        currentBet = 0;
+    }
+    
     public Card hitCard() {
         return hand.drawCard();
     }
