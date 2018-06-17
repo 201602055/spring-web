@@ -66,7 +66,7 @@ public class Player {
      * 4. Blackjack 이면 1.5배를 돌려받아야 할 것 같아요.
      * */
     public void blackjack() {
-        balance += currentBet * 1.5;
+        balance += currentBet * 1.5 + currnetBet;
         currentBet = 0;
     }
     
