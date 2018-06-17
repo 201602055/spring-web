@@ -537,9 +537,12 @@
         if (money < bet) {
             bet = money;
         }
-
-        $('#bet').html(currentBet + bet);
-        $('#money').html(money - bet);
+        if ( currentBet < 10000 ) {
+            $('#bet').html(currentBet + bet);
+            $('#money').html(money - bet);
+        }
+        else
+            alert("베팅 금액 상한선은 10000원입니다!!!!!");
     });
 
     $('#less').click(function(){
