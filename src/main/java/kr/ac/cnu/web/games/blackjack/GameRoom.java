@@ -61,13 +61,13 @@ public class GameRoom {
    /**
  * 1. hit 후 21이 넘어가면 바로 Game이 끝나야 합니다.
  */
-public Card hit(String name) {
+public void hit(String name) {
     Player player = playerList.get(name);
+    player.hitCard();
     if(player.getHand().getCardSum() > 21) {
         evaluator.evaluate();
         this.isFinished = true;
     }
-    return player.hitCard();
 }
 
     public void stand(String name) {
