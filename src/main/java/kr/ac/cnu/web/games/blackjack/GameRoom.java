@@ -58,11 +58,17 @@ public class GameRoom {
         playerList.forEach((s, player) -> player.deal());
     }
 
-    public Card hit(String name) {
-        Player player = playerList.get(name);
-
-        return player.hitCard();
+   /**
+ * 1. hit 후 21이 넘어가면 바로 Game이 끝나야 합니다.
+ */
+public Card hit(String name) {
+    Player player = playerList.get(name);
+    if(player.getHand().getCardSum() > 21) {
+        evaluator.evaluate();
+        this.isFinished = true;
     }
+    return player.hitCard();
+}
 
     public void stand(String name) {
         Player player = playerList.get(name);
