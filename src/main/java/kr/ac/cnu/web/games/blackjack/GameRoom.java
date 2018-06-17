@@ -60,11 +60,12 @@ public class GameRoom {
 
    /**
  * 1. hit 후 21이 넘어가면 바로 Game이 끝나야 합니다.
+      (추가)blackjack도 처리해줌
  */
 public void hit(String name) {
     Player player = playerList.get(name);
     player.hitCard();
-    if(player.getHand().getCardSum() > 21) {
+    if(player.getHand().getCardSum() >= 21) {
         evaluator.evaluate();
         this.isFinished = true;
     }
