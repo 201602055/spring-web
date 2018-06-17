@@ -33,9 +33,9 @@ public class Hand {
                     sum +=1;
                 } else {
                     sum += 11;
-                } else {
+                } 
+            }else {
                 sum=sum+cardList.get(i).getRank();
-            }
         }
         return sum;
     }
