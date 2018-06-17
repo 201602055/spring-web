@@ -26,16 +26,23 @@ public class Evaluator {
 
             return true;
         }
-
+        /**
+         * 2. 내가 25가 나왔는데도 이겼네요? 21이 넘어가면 무조건 져야 해요.
+         * 4. Blackjack 이면 1.5배를 돌려받아야 할 것 같아요.
+         * */
         playerMap.forEach((s, player) -> {
             int playerResult = player.getHand().getCardSum();
             if (playerResult > 21) {
                 player.lost();
+                player.stand();
             } else if (playerResult > dealerResult) {
                 player.win();
             } else if (playerResult == dealerResult) {
                 player.tie();
-            } else {
+            } else if (playerResult == 21){
+                player.blackjack();
+            }
+            else {
                 player.lost();
             }
         });
