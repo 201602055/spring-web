@@ -530,7 +530,8 @@
     })
 
     $('#more').click(function(){
-        var bet = 100;
+        var bet = 1000;
+        <!--현재 betting 기본 금액이 100원 이네요. 1000원으로 올려 주세요.-->
         var currentBet = parseInt($('#bet').html());
         var money = parseInt($('#money').html());
         if (money < bet) {
@@ -542,7 +543,8 @@
     });
 
     $('#less').click(function(){
-        var bet = 100;
+        var bet = 1000;
+        <!--현재 betting 기본 금액이 100원 이네요. 1000원으로 올려 주세요.-->
         var currentBet = parseInt($('#bet').html());
         var money = parseInt($('#money').html());
         if(currentBet < bet) {
