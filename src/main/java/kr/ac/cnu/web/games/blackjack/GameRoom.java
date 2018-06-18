@@ -58,6 +58,14 @@ public class GameRoom {
         playerList.forEach((s, player) -> player.deal());
     }
 
+     /**
+     * double down
+     * */
+    public void double_down() {
+        this.isFinished = false;
+        playerList.forEach((s, player) -> player.double_down());
+    }
+    
    /**
  * 1. hit 후 21이 넘어가면 바로 Game이 끝나야 합니다.
       (추가)blackjack도 처리해줌
