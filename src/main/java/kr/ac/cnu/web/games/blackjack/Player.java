@@ -46,6 +46,10 @@ public class Player {
     public void deal() {
         hand.drawCard();
         hand.drawCard();
+        if(hand.getCardSum()==21) {
+            player.blackjack();
+            isPlaying = false;
+        }
     }
 
     /**
