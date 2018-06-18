@@ -48,6 +48,14 @@ public class Player {
         hand.drawCard();
     }
 
+    /**
+     * 2. double down 기능이 있으면 좋겠네요.
+     * */
+    public void double_down() {
+        hand.drawCard();
+        placeBet(currentBet * 2);
+    }
+    
     public void win() {
         balance += currentBet * 2;
         currentBet = 0;
