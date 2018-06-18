@@ -64,6 +64,7 @@ public class GameRoom {
     public void double_down() {
         this.isFinished = false;
         playerList.forEach((s, player) -> player.double_down());
+        this.isFinished = true;
     }
     
    /**
