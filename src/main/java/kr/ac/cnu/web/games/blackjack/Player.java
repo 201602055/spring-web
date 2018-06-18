@@ -47,7 +47,7 @@ public class Player {
         hand.drawCard();
         hand.drawCard();
         if(hand.getCardSum()==21) {
-            player.blackjack();
+            blackjack();
             isPlaying = false;
         }
     }
